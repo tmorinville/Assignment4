@@ -73,7 +73,7 @@
       <DependentUpon>KarateSchool%281%29.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="mywork\logon.aspx" />
+    <Content Include="logon.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -85,11 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KarateSchool.dbml</DependentUpon>
     </Compile>
-    <Compile Include="mywork\logon.aspx.cs">
+    <Compile Include="logon.aspx.cs">
       <DependentUpon>logon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="mywork\logon.aspx.designer.cs">
+    <Compile Include="logon.aspx.designer.cs">
       <DependentUpon>logon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
