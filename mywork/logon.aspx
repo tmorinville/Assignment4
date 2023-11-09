@@ -30,16 +30,8 @@
                 <td>&nbsp;</td>
             </tr>
         </table>
-        <br />
     </p>
     <p>
-        &nbsp;</p>
-    <p>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </p>
-    <p>
-    </p>
-    <p>
-    </p>
-    <p>
-    </p>
-</asp:Content>
+    </asp:Content>

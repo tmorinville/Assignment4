@@ -29,21 +29,20 @@ namespace Assignment4.mywork
 
             // LINQ
             NetUser user = (from x in dbcon.NetUsers
-                         where x.UserName == username && x.UserPassword == password
-                         select x).First();
+                            where x.UserName == username && x.UserPassword == password
+                            select x).First();
 
-            if(user.UserType == "Member")
+            if (user.UserType == "Member")
             {
                 // Redirect to Member page
                 Response.Redirect("member.aspx", true);
             }
-            else if(user.UserType == "Instructor")
+            else if (user.UserType == "Instructor")
             {
                 // Redirect to Instructor page
                 Response.Redirect("instructor.aspx", true);
             }
 
-            
         }
     }
 }
