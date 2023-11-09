@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
 
 namespace Assignment4.mywork
 {
@@ -27,6 +28,22 @@ namespace Assignment4.mywork
             dbcon = new KarateSchoolDataContext(connString);
 
             // LINQ
+            NetUser user = (from x in dbcon.NetUsers
+                         where x.UserName == username && x.UserPassword == password
+                         select x).First();
+
+            if(user.UserType == "Member")
+            {
+                // Redirect to Member page
+                Response.Redirect("member.aspx", true);
+            }
+            else if(user.UserType == "Instructor")
+            {
+                // Redirect to Instructor page
+                Response.Redirect("instructor.aspx", true);
+            }
+
+            
         }
     }
 }
