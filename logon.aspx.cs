@@ -12,7 +12,7 @@ namespace Assignment4.mywork
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         KarateSchoolDataContext dbcon;
@@ -27,6 +27,7 @@ namespace Assignment4.mywork
             string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\tmmor\\OneDrive\\Desktop\\Modern Software Development\\Assignment4\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
             dbcon = new KarateSchoolDataContext(connString);
 
+            
             try
             {
                 // LINQ
@@ -50,7 +51,7 @@ namespace Assignment4.mywork
                 // Redirect to logon page, no matching usertype found
                 Response.Redirect("logon.aspx", true);
             }
-
+            
             
 
         }
