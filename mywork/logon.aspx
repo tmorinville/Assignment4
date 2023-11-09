@@ -32,6 +32,5 @@
         </table>
     </p>
     <p>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-    </p>
+        &nbsp;</p>
     </asp:Content>

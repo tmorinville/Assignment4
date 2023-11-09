@@ -27,21 +27,31 @@ namespace Assignment4.mywork
             string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\tmmor\\OneDrive\\Desktop\\Modern Software Development\\Assignment4\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
             dbcon = new KarateSchoolDataContext(connString);
 
-            // LINQ
-            NetUser user = (from x in dbcon.NetUsers
-                            where x.UserName == username && x.UserPassword == password
-                            select x).First();
+            try
+            {
+                // LINQ
+                NetUser user = (from x in dbcon.NetUsers
+                                where x.UserName == username && x.UserPassword == password
+                                select x).First();
 
-            if (user.UserType == "Member")
-            {
-                // Redirect to Member page
-                Response.Redirect("member.aspx", true);
+                if (user.UserType == "Member")
+                {
+                    // Redirect to Member page
+                    Response.Redirect("member.aspx", true);
+                }
+                else // Instructor
+                {
+                    // Redirect to Instructor page
+                    Response.Redirect("instructor.aspx", true);
+                }
             }
-            else if (user.UserType == "Instructor")
+            catch(Exception ex) 
             {
-                // Redirect to Instructor page
-                Response.Redirect("instructor.aspx", true);
+                // Redirect to logon page, no matching usertype found
+                Response.Redirect("logon.aspx", true);
             }
+
+            
 
         }
     }
