@@ -36,8 +36,8 @@
         </div>
     </form>
 
-    <!-- Bootstrap to create fixed bottom footer -->
-    <nav class="navbar navbar-expand-sm bg-info navbar-dark fixed-bottom">
+    <!-- Bootstrap to create footer -->
+    <nav class="navbar navbar-expand-sm bg-info navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">CSCI 213 Assignment 4 - Taya Morinville & Mary Gehrig</a>
         </div>
