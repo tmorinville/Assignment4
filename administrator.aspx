@@ -151,7 +151,7 @@
                     </asp:RadioButtonList>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="sectionRadioButtonList" ErrorMessage="Please select section" ForeColor="Red" ValidationGroup="AssignToSection"></asp:RequiredFieldValidator>
                     <br />
-                    <asp:Button ID="btnAssignToSection" runat="server" Text="Assign to Section" ValidationGroup="AssignToSection" />
+                    <asp:Button ID="btnAssignToSection" runat="server" Text="Assign to Section" ValidationGroup="AssignToSection" OnClick="btnAssignToSection_Click" />
                     <br />
                 </td>
             </tr>

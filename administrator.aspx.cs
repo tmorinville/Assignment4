@@ -47,5 +47,13 @@ namespace Assignment4
             instructorGridView.DataSource = instructorQuery;
             instructorGridView.DataBind();
         }
+
+        protected void btnAssignToSection_Click(object sender, EventArgs e)
+        {
+            // Connect to database
+            string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\tmmor\\OneDrive\\Desktop\\Modern Software Development\\Assignment4\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
+            dbcon = new KarateSchoolDataContext(connString);
+                
+        }
     }
 }
