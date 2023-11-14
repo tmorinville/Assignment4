@@ -33,40 +33,76 @@ namespace Assignment4
         protected global::System.Web.UI.WebControls.GridView instructorGridView;
 
         /// <summary>
-        /// tbInsertUserUserName control.
+        /// tbInsertMemberUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbInsertUserUserName;
+        protected global::System.Web.UI.WebControls.TextBox tbInsertMemberUserName;
 
         /// <summary>
-        /// tbInsertUserPassword control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbInsertUserPassword;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// tbInsertUserFName control.
+        /// tbInsertMemberPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbInsertUserFName;
+        protected global::System.Web.UI.WebControls.TextBox tbInsertMemberPassword;
 
         /// <summary>
-        /// tbInsertUserLName control.
+        /// RequiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbInsertUserLName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
+        /// tbInsertMemberFName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbInsertMemberFName;
+
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+
+        /// <summary>
+        /// tbInsertMemberLName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbInsertMemberLName;
+
+        /// <summary>
+        /// RequiredFieldValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
         /// tbInsertMemberDate control.
@@ -78,6 +114,15 @@ namespace Assignment4
         protected global::System.Web.UI.WebControls.TextBox tbInsertMemberDate;
 
         /// <summary>
+        /// RequiredFieldValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+
+        /// <summary>
         /// tbInsertMemberPhone control.
         /// </summary>
         /// <remarks>
@@ -87,6 +132,15 @@ namespace Assignment4
         protected global::System.Web.UI.WebControls.TextBox tbInsertMemberPhone;
 
         /// <summary>
+        /// RequiredFieldValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+
+        /// <summary>
         /// tbInsertMemberEmail control.
         /// </summary>
         /// <remarks>
@@ -94,6 +148,15 @@ namespace Assignment4
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbInsertMemberEmail;
+
+        /// <summary>
+        /// RequiredFieldValidator7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
 
         /// <summary>
         /// btnAddMember control.
@@ -114,6 +177,15 @@ namespace Assignment4
         protected global::System.Web.UI.WebControls.TextBox tbInsertInstructorUserName;
 
         /// <summary>
+        /// RequiredFieldValidator8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
+
+        /// <summary>
         /// tbInsertInstructorPW control.
         /// </summary>
         /// <remarks>
@@ -121,6 +193,15 @@ namespace Assignment4
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbInsertInstructorPW;
+
+        /// <summary>
+        /// RequiredFieldValidator9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
 
         /// <summary>
         /// tbInsertInstructorFName control.
@@ -132,6 +213,15 @@ namespace Assignment4
         protected global::System.Web.UI.WebControls.TextBox tbInsertInstructorFName;
 
         /// <summary>
+        /// RequiredFieldValidator10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
+
+        /// <summary>
         /// tbInsertInstructorLName control.
         /// </summary>
         /// <remarks>
@@ -141,6 +231,15 @@ namespace Assignment4
         protected global::System.Web.UI.WebControls.TextBox tbInsertInstructorLName;
 
         /// <summary>
+        /// RequiredFieldValidator11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator11;
+
+        /// <summary>
         /// tbInsertInstructorPhone control.
         /// </summary>
         /// <remarks>
@@ -148,6 +247,15 @@ namespace Assignment4
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbInsertInstructorPhone;
+
+        /// <summary>
+        /// RequiredFieldValidator12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator12;
 
         /// <summary>
         /// btnAddInstructor control.
@@ -168,6 +276,15 @@ namespace Assignment4
         protected global::System.Web.UI.WebControls.RadioButtonList userTypeRadioButtonList;
 
         /// <summary>
+        /// RequiredFieldValidator13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator13;
+
+        /// <summary>
         /// tbDeleteID control.
         /// </summary>
         /// <remarks>
@@ -175,6 +292,15 @@ namespace Assignment4
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbDeleteID;
+
+        /// <summary>
+        /// RequiredFieldValidator14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator14;
 
         /// <summary>
         /// btnDelete control.
@@ -195,6 +321,15 @@ namespace Assignment4
         protected global::System.Web.UI.WebControls.TextBox tbAssignMemberID;
 
         /// <summary>
+        /// RequiredFieldValidator16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator16;
+
+        /// <summary>
         /// sectionRadioButtonList control.
         /// </summary>
         /// <remarks>
@@ -202,6 +337,15 @@ namespace Assignment4
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList sectionRadioButtonList;
+
+        /// <summary>
+        /// RequiredFieldValidator15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator15;
 
         /// <summary>
         /// btnAssignToSection control.

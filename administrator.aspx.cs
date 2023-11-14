@@ -14,6 +14,9 @@ namespace Assignment4
         {
             // Show data in GridViews
             RefreshData();
+
+            // Allow for validation to be used
+            UnobtrusiveValidationMode =UnobtrusiveValidationMode.None;
         }
 
         private void RefreshData()
