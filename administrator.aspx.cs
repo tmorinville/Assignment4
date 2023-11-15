@@ -54,6 +54,11 @@ namespace Assignment4
             // Connect to database
             string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\tmmor\\OneDrive\\Desktop\\Modern Software Development\\Assignment4\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
             dbcon = new KarateSchoolDataContext(connString);
+
+            // Create empty Section
+            Section mySection = new Section();
+
+            // Update 
                 
         }
 
@@ -130,6 +135,59 @@ namespace Assignment4
             // Insert record into Member table
             dbcon.Members.InsertOnSubmit(myMember);
             dbcon.SubmitChanges(); 
+
+            // Refresh DataGridViews
+            RefreshData();
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            // Connect to database
+            string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\tmmor\\OneDrive\\Desktop\\Modern Software Development\\Assignment4\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
+            dbcon = new KarateSchoolDataContext(connString);
+
+            // Get ID entered
+            int id = Convert.ToInt32(tbDeleteID.Text);
+
+            if (userTypeRadioButtonList.SelectedIndex == 0) // Member
+            {
+                // Delete all associated rows in Section table
+                var sectionMembers = from member in dbcon.Sections
+                                     where member.Member_ID == id
+                                     select member;
+                dbcon.Sections.DeleteAllOnSubmit(sectionMembers);
+                dbcon.SubmitChanges();
+
+                // Delete from Member table
+                var members = from mem in dbcon.Members
+                              where mem.Member_UserID == id
+                              select mem;
+                dbcon.Members.DeleteAllOnSubmit(members);
+                dbcon.SubmitChanges();
+
+                // Delete from NetUser table
+                var memberUser = from memUser in dbcon.NetUsers
+                                 where memUser.UserID == id
+                                 select memUser;
+                dbcon.NetUsers.DeleteAllOnSubmit(memberUser);
+                dbcon.SubmitChanges();
+            }
+            else // Instructor
+            {
+                // Delete from Instructor table
+                var instructor = from i in dbcon.Instructors
+                                 where i.InstructorID == id
+                                 select i;
+                dbcon.Instructors.DeleteAllOnSubmit(instructor);
+                dbcon.SubmitChanges();
+
+                // Delete from NetUser table
+                var instructorUser = from i in dbcon.NetUsers
+                                     where i.UserID == id
+                                     select i;
+                dbcon.NetUsers.DeleteAllOnSubmit(instructorUser);
+                dbcon.SubmitChanges();
+            }
 
             // Refresh DataGridViews
             RefreshData();

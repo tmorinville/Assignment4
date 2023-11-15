@@ -74,7 +74,9 @@
       <DependentUpon>KarateSchool%281%29.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="instructor\instructor.aspx" />
     <Content Include="logon.aspx" />
+    <Content Include="member\member.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +90,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="instructor\instructor.aspx.cs">
+      <DependentUpon>instructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="instructor\instructor.aspx.designer.cs">
+      <DependentUpon>instructor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="KarateSchool.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +108,13 @@
     </Compile>
     <Compile Include="logon.aspx.designer.cs">
       <DependentUpon>logon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\member.aspx.cs">
+      <DependentUpon>member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\member.aspx.designer.cs">
+      <DependentUpon>member.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">

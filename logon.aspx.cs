@@ -27,33 +27,31 @@ namespace Assignment4.mywork
             string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\tmmor\\OneDrive\\Desktop\\Modern Software Development\\Assignment4\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
             dbcon = new KarateSchoolDataContext(connString);
 
-            
-            try
-            {
-                // LINQ
-                NetUser user = (from x in dbcon.NetUsers
-                                where x.UserName == username && x.UserPassword == password
-                                select x).First();
+            // LINQ
+            NetUser user = (from x in dbcon.NetUsers
+                            where x.UserName == username && x.UserPassword == password
+                            select x).FirstOrDefault();
 
-                if (user.UserType == "Member")
-                {
-                    // Redirect to Member page
-                    Response.Redirect("member.aspx", true);
-                }
-                else // Instructor
-                {
-                    // Redirect to Instructor page
-                    Response.Redirect("instructor.aspx", true);
-                }
-            }
-            catch(Exception ex) 
+            if(user == null)
             {
-                // Redirect to logon page, no matching usertype found
+                // No user found, redirect to logon page
                 Response.Redirect("logon.aspx", true);
             }
-            
-            
-
+            else if (user.UserType == "Member")
+            {
+                // Redirect to Member page
+                Response.Redirect("member/member.aspx", true);
+            }
+            else if(user.UserType == "Instructor") 
+            {
+                // Redirect to Instructor page
+                Response.Redirect("instructor/instructor.aspx", true);
+            }
+            else // Administrator
+            {
+                // Redirect to administrator page
+                Response.Redirect("administrator.aspx", true);
+            }
         }
     }
 }
