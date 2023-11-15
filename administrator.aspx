@@ -75,19 +75,19 @@
                     <asp:TextBox ID="tbInsertMemberLName" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbInsertMemberLName" ErrorMessage="Please enter last name" ForeColor="Red" ValidationGroup="AddMember"></asp:RequiredFieldValidator>
                     <br />
-                    Date Joined:<br />
-                    <asp:TextBox ID="tbInsertMemberDate" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbInsertMemberDate" ErrorMessage="Please enter date joined" ForeColor="Red" ValidationGroup="AddMember"></asp:RequiredFieldValidator>
-                    <br />
                     Phone Number:<br />
                     <asp:TextBox ID="tbInsertMemberPhone" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="tbInsertMemberPhone" ErrorMessage="Please enter phone number" ForeColor="Red" ValidationGroup="AddMember"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="tbInsertMemberPhone" ErrorMessage="Invalid phone number" ForeColor="Red" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" ValidationGroup="AddMember"></asp:RegularExpressionValidator>
                     <br />
                     Email:<br />
                     <asp:TextBox ID="tbInsertMemberEmail" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="tbInsertMemberEmail" ErrorMessage="Please enter email" ForeColor="Red" ValidationGroup="AddMember"></asp:RequiredFieldValidator>
                     <br />
-                    <asp:Button ID="btnAddMember" runat="server" Text="Add Member" ValidationGroup="AddMember" />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="tbInsertMemberEmail" ErrorMessage="Invalid email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="AddMember"></asp:RegularExpressionValidator>
+                    <br />
+                    <asp:Button ID="btnAddMember" runat="server" Text="Add Member" ValidationGroup="AddMember" OnClick="btnAddMember_Click" />
                 </td>
                 <td><strong>Add New Instructor<br />
                     </strong>User Name:<br />
@@ -113,9 +113,10 @@
                     <asp:TextBox ID="tbInsertInstructorPhone" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="tbInsertInstructorPhone" ErrorMessage="Please enter phone number" ForeColor="Red" ValidationGroup="AddInstructor"></asp:RequiredFieldValidator>
                     <br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="tbInsertInstructorPhone" ErrorMessage="Invalid phone number" ForeColor="Red" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" ValidationGroup="AddInstructor"></asp:RegularExpressionValidator>
                     <br />
                     <br />
-                    <asp:Button ID="btnAddInstructor" runat="server" Text="Add Instructor" ValidationGroup="AddInstructor" />
+                    <asp:Button ID="btnAddInstructor" runat="server" Text="Add Instructor" ValidationGroup="AddInstructor" OnClick="btnAddInstructor_Click" />
                     <br />
                 </td>
             </tr>
@@ -136,6 +137,7 @@
                     <br />
                     ID to Delete:
                     <asp:TextBox ID="tbDeleteID" runat="server"></asp:TextBox>
+                    <br />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="tbDeleteID" ErrorMessage="Please enter ID to delete" ForeColor="Red" ValidationGroup="DeleteMemberOrInstructor"></asp:RequiredFieldValidator>
                     <br />
                     <asp:Button ID="btnDelete" runat="server" Text="Delete" ValidationGroup="DeleteMemberOrInstructor" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -54,6 +55,84 @@ namespace Assignment4
             string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\tmmor\\OneDrive\\Desktop\\Modern Software Development\\Assignment4\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
             dbcon = new KarateSchoolDataContext(connString);
                 
+        }
+
+        protected void btnAddInstructor_Click(object sender, EventArgs e)
+        {
+            // Connect to database
+            string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\tmmor\\OneDrive\\Desktop\\Modern Software Development\\Assignment4\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
+            dbcon = new KarateSchoolDataContext(connString);
+
+            // Create empty NetUser
+            NetUser myUser = new NetUser();
+
+            // Change properties of myUser
+            myUser.UserName = tbInsertInstructorUserName.Text;
+            myUser.UserPassword = tbInsertInstructorPW.Text;
+            myUser.UserType = "Instructor";
+
+            // Insert record into NetUser table
+            dbcon.NetUsers.InsertOnSubmit(myUser);
+            dbcon.SubmitChanges();
+
+            // Store myUser UserID
+            int userID = myUser.UserID; 
+
+            // Create empty Instructor
+            Instructor myInstructor = new Instructor();
+
+            // Change properties of myInstructor
+            myInstructor.InstructorID = userID;
+            myInstructor.InstructorFirstName = tbInsertInstructorFName.Text;
+            myInstructor.InstructorLastName = tbInsertInstructorLName.Text;
+            myInstructor.InstructorPhoneNumber = tbInsertInstructorPhone.Text;
+
+            // Insert record into Instructor table
+            dbcon.Instructors.InsertOnSubmit(myInstructor);
+            dbcon.SubmitChanges();
+
+            // Refresh DataGridViews
+            RefreshData();
+        }
+
+        protected void btnAddMember_Click(object sender, EventArgs e)
+        {
+            // Connect to database
+            string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\tmmor\\OneDrive\\Desktop\\Modern Software Development\\Assignment4\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
+            dbcon = new KarateSchoolDataContext(connString);
+
+            // Create empty NetUser
+            NetUser myUser = new NetUser();
+
+            // Change properties of myUser
+            myUser.UserName = tbInsertMemberUserName.Text;
+            myUser.UserPassword = tbInsertMemberPassword.Text;
+            myUser.UserType = "Member";
+
+            // Insert record into NetUser table
+            dbcon.NetUsers.InsertOnSubmit(myUser);
+            dbcon.SubmitChanges(); 
+
+            // Store myUser UserID
+            int userID = myUser.UserID;
+
+            // Create empty Member
+            Member myMember = new Member();
+
+            // Change properties of myMember
+            myMember.Member_UserID = userID;
+            myMember.MemberFirstName = tbInsertMemberFName.Text;
+            myMember.MemberLastName = tbInsertMemberLName.Text;
+            myMember.MemberDateJoined = DateTime.Now;
+            myMember.MemberPhoneNumber = tbInsertMemberPhone.Text;
+            myMember.MemberEmail = tbInsertMemberEmail.Text;
+
+            // Insert record into Member table
+            dbcon.Members.InsertOnSubmit(myMember);
+            dbcon.SubmitChanges(); 
+
+            // Refresh DataGridViews
+            RefreshData();
         }
     }
 }
