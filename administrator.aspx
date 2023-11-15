@@ -140,7 +140,7 @@
                     <br />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="tbDeleteID" ErrorMessage="Please enter ID to delete" ForeColor="Red" ValidationGroup="DeleteMemberOrInstructor"></asp:RequiredFieldValidator>
                     <br />
-                    <asp:Button ID="btnDelete" runat="server" Text="Delete" ValidationGroup="DeleteMemberOrInstructor" />
+                    <asp:Button ID="btnDelete" runat="server" Text="Delete" ValidationGroup="DeleteMemberOrInstructor" OnClick="btnDelete_Click" />
                 </td>
                 <td><strong>Assign Member to Section</strong><br />
                     Member ID:
