@@ -13,11 +13,14 @@ namespace Assignment4
         KarateSchoolDataContext dbcon;
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Show data in GridViews
-            RefreshData();
-
+            if (!IsPostBack)
+            {
+                // Show data in GridViews
+                RefreshData();
+            }
+            
             // Allow for validation to be used
-            UnobtrusiveValidationMode =UnobtrusiveValidationMode.None;
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         private void RefreshData()
@@ -47,6 +50,18 @@ namespace Assignment4
             // Display in instructor GridView
             instructorGridView.DataSource = instructorQuery;
             instructorGridView.DataBind();
+
+            // LINQ for instructorDropDownList
+            var instructorList = from ins in dbcon.Instructors
+                                 select ins.InstructorID;
+            instructorDropDownList.DataSource = instructorList;
+            instructorDropDownList.DataBind();
+
+            // LINQ for memberDropDownList
+            var memberList = from mem in dbcon.Members
+                             select mem.Member_UserID;
+            memberDropDownList.DataSource = memberList;
+            memberDropDownList.DataBind();
         }
 
         protected void btnAssignToSection_Click(object sender, EventArgs e)
@@ -59,7 +74,18 @@ namespace Assignment4
             Section mySection = new Section();
 
             // Update 
-                
+            mySection.SectionName = sectionRadioButtonList.SelectedItem.ToString();
+            mySection.SectionStartDate = DateTime.Now;
+            mySection.Member_ID = Convert.ToInt32(memberDropDownList.SelectedItem.Value);
+            mySection.Instructor_ID = Convert.ToInt32(instructorDropDownList.SelectedItem.Value);
+            mySection.SectionFee = 500; // Hard coded value of 500
+
+            // Insert mySection into Section table
+            dbcon.Sections.InsertOnSubmit(mySection);
+            dbcon.SubmitChanges();
+
+            // RefreshData
+            RefreshData();
         }
 
         protected void btnAddInstructor_Click(object sender, EventArgs e)
@@ -174,6 +200,13 @@ namespace Assignment4
             }
             else // Instructor
             {
+                // Delete associated items from Section table
+                var instructorSection = from ins in dbcon.Sections
+                                        where ins.Instructor_ID == id
+                                        select ins;
+                dbcon.Sections.DeleteAllOnSubmit(instructorSection);
+                dbcon.SubmitChanges();
+
                 // Delete from Instructor table
                 var instructor = from i in dbcon.Instructors
                                  where i.InstructorID == id
