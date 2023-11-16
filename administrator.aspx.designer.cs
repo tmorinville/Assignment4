@@ -321,22 +321,22 @@ namespace Assignment4
         protected global::System.Web.UI.WebControls.Button btnDelete;
 
         /// <summary>
-        /// tbAssignMemberID control.
+        /// memberDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbAssignMemberID;
+        protected global::System.Web.UI.WebControls.DropDownList memberDropDownList;
 
         /// <summary>
-        /// RequiredFieldValidator16 control.
+        /// instructorDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator16;
+        protected global::System.Web.UI.WebControls.DropDownList instructorDropDownList;
 
         /// <summary>
         /// sectionRadioButtonList control.

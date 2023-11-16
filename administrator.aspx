@@ -8,7 +8,7 @@
             width: 993px;
         }
         .auto-style3 {
-            width: 1114px;
+            width: 1079px;
         }
         </style>
 </asp:Content>
@@ -144,8 +144,12 @@
                 </td>
                 <td><strong>Assign Member to Section</strong><br />
                     Member ID:
-                    <asp:TextBox ID="tbAssignMemberID" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ControlToValidate="tbAssignMemberID" ErrorMessage="Please enter member ID" ForeColor="Red" ValidationGroup="AssignToSection"></asp:RequiredFieldValidator>
+                    <asp:DropDownList ID="memberDropDownList" runat="server" AutoPostBack="True">
+                    </asp:DropDownList>
+                    <br />
+                    Instructor ID:
+                    <asp:DropDownList ID="instructorDropDownList" runat="server" AutoPostBack="True">
+                    </asp:DropDownList>
                     <br />
                     Section:<asp:RadioButtonList ID="sectionRadioButtonList" runat="server">
                         <asp:ListItem>Karate Age-Uke</asp:ListItem>
