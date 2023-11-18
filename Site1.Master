@@ -15,8 +15,9 @@
     <nav class="navbar navbar-expand-sm bg-info">
   <div class="container-fluid">
     <ul class="navbar-nav">
+      <a class="navbar-brand" href="#">Karate School</a>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link 1</a>
+        <a class="nav-link" href="logon.aspx">Login Page</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link 2</a>
@@ -36,8 +37,8 @@
         </div>
     </form>
 
-    <!-- Bootstrap to create fixed bottom footer -->
-    <nav class="navbar navbar-expand-sm bg-info navbar-dark fixed-bottom">
+    <!-- Bootstrap to create footer -->
+    <nav class="navbar navbar-expand-sm bg-info navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">CSCI 213 Assignment 4 - Taya Morinville & Mary Gehrig</a>
         </div>
